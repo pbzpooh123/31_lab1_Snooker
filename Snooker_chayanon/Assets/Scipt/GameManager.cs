@@ -69,9 +69,9 @@ public class GameManager : MonoBehaviour
         Rigidbody rd = cueBall.GetComponent<Rigidbody>();
         rd.velocity = Vector3.zero;
         rd.angularVelocity = Vector3.zero;
-        cueBall.transform.eulerAngles = Vector3.zero;
+        cueBall.transform.eulerAngles = new Vector3(0,90,0);
         SetCamera();
-        camera.transform.eulerAngles = new Vector3(11.914f, 90f, 0f);
+        camera.transform.eulerAngles = new Vector3(40f, 90f, 0f);
         ballLine.SetActive(true);
     }
     // Update is called once per frame
