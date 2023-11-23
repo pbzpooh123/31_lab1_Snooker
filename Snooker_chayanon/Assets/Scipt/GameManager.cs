@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject cueBall;  
     [SerializeField] private GameObject ballLine;
     [SerializeField] private float xInput;
-    
+    [SerializeField] private float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,10 +45,26 @@ public class GameManager : MonoBehaviour
         
     }
 
+    void ShootBall()
+    {
+        Rigidbody rd = cueBall.GetComponent<Rigidbody>();
+        rd.AddRelativeForce(Vector3.forward * speed, ForceMode.Impulse);
+        ballLine.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
         RotateBall();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ShootBall();
+        }
+
+        if (cueBall.GetComponent<Rigidbody>())
+        {
+            
+        }
         
     }
 }
